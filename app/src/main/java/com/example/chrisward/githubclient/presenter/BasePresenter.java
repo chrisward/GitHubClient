@@ -1,5 +1,7 @@
 package com.example.chrisward.githubclient.presenter;
 
+import android.annotation.SuppressLint;
+
 import com.example.chrisward.githubclient.presenter.presenterContract.BasePresenterContract;
 import com.example.chrisward.githubclient.presenter.viewContract.BaseViewContract;
 
@@ -12,6 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public abstract class BasePresenter implements BasePresenterContract {
     protected WeakReference<? extends BaseViewContract> view;
     private Retrofit retrofit;
+
     private final String GITHUB_API_URL = "https://api.github.com/";
 
     public BaseViewContract getView() {

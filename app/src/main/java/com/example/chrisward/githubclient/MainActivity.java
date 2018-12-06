@@ -19,7 +19,6 @@ public class MainActivity extends BaseView implements LoginViewContract {
 
     private EditText usernameField;
     private EditText passwordField;
-    private Button loginButton;
 
     @Override
     protected LoginPresenter getPresenter() {
@@ -36,7 +35,7 @@ public class MainActivity extends BaseView implements LoginViewContract {
 
         usernameField = findViewById(R.id.usernameField);
         passwordField = findViewById(R.id.passwordField);
-        loginButton = findViewById(R.id.loginButton);
+        Button loginButton = findViewById(R.id.loginButton);
 
         loginButton.setOnClickListener(l -> {
             getPresenter().authenticate(

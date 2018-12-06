@@ -1,7 +1,5 @@
 package com.example.chrisward.githubclient.presenter;
 
-import android.widget.Toast;
-
 import com.example.chrisward.githubclient.api.GithubApi;
 import com.example.chrisward.githubclient.helper.AuthHelper;
 import com.example.chrisward.githubclient.presenter.viewContract.BaseViewContract;
@@ -36,7 +34,6 @@ public class LoginPresenter extends BasePresenter {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(user -> {
-                System.out.println(user);
                 getView().loginSuccess(user);
             }, throwable -> {
                 getView().loginFailure("Ooops, looks like you used the wrong credentials");
